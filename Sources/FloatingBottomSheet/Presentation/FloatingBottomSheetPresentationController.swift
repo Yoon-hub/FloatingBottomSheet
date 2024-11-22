@@ -127,8 +127,11 @@ public final class FloatingBottomSheetPresentationController: UIPresentationCont
     guard let containerView else { return }
 
     bottomSheetContainerView.addSubview(handleView)
-    bottomSheetContainerView.addGestureRecognizer(panGestureRecognizer)
-
+      
+      if presentable?.allowsDrag == true {
+          bottomSheetContainerView.addGestureRecognizer(panGestureRecognizer)
+      }
+      
     containerView.addSubview(dimmingView)
     containerView.addSubview(bottomSheetContainerView)
 
@@ -294,7 +297,6 @@ extension FloatingBottomSheetPresentationController {
 
   @objc
   private func didPanOnPresentedView(_ recognizer: UIPanGestureRecognizer) {
-      guard presentable?.allowsDrag == true else { return }
     guard shouldRespond(to: recognizer),
           let containerView
     else {
