@@ -38,6 +38,8 @@ extension FloatingBottomSheetPresentable where Self: UIViewController {
 
   public var allowsDragToDismiss: Bool { true }
 
+  public var allowsDrag: Bool { true }
+    
   public var allowsTapToDismiss: Bool { true }
 
   public func shouldRespond(to panGestureRecognizer: UIPanGestureRecognizer) -> Bool {

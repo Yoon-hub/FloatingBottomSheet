@@ -59,6 +59,8 @@ public protocol FloatingBottomSheetPresentable: AnyObject {
   ///
   /// The default value for `bottomSheetHandleColor` is `UIColor(lightHex: "#EAEBEE", darkHex: "#34373D")`
   var bottomSheetHandleColor: UIColor { get }
+  
+  var allowsDrag: Bool { get }
 
   /// The `allowsDragToDismiss` property determines whether the user can swipe down to dismiss the bottom sheet.
   ///

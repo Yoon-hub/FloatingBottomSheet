@@ -294,6 +294,7 @@ extension FloatingBottomSheetPresentationController {
 
   @objc
   private func didPanOnPresentedView(_ recognizer: UIPanGestureRecognizer) {
+      guard presentable?.allowsDrag == true else { return }
     guard shouldRespond(to: recognizer),
           let containerView
     else {
